@@ -1,0 +1,4 @@
+tests=int(input())
+for t in range(1,tests+1):
+    S=input()
+    print('{} {}'.format(S[::2],S[1::2]))
