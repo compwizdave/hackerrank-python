@@ -1,0 +1,32 @@
+#!/bin/python3
+
+import sys
+
+n=input()
+while n:
+    print(n)
+    n=input()
+    
+sys.exit(0)
+
+n = int(input().strip())
+phonebook={}
+for entries in range(n):
+    line=input()
+    (key,value)=line.split(' ')
+    phonebook[key] = value
+
+print(phonebook)
+
+line=input()
+print('line={}'.format(line))
+
+#while line:
+#    number=phonebook.get(line, 'NotInThePhoneBook')
+#    if number == 'NotInThePhoneBook':
+#        print('Not found')
+#    else:
+#        print("{}={}".format(line,number))
+#    line=input()
+#    print('line={}'.format(line))
+
