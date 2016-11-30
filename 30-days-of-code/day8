@@ -1,32 +1,17 @@
 #!/bin/python3
+import sys    
 
-import sys
-
-n=input()
-while n:
-    print(n)
-    n=input()
-    
-sys.exit(0)
-
-n = int(input().strip())
+n = int(sys.stdin.readline().strip())
 phonebook={}
 for entries in range(n):
-    line=input()
+    line=sys.stdin.readline().strip()
     (key,value)=line.split(' ')
-    phonebook[key] = value
+    phonebook[key] = int(value)
 
-print(phonebook)
-
-line=input()
-print('line={}'.format(line))
-
-#while line:
-#    number=phonebook.get(line, 'NotInThePhoneBook')
-#    if number == 'NotInThePhoneBook':
-#        print('Not found')
-#    else:
-#        print("{}={}".format(line,number))
-#    line=input()
-#    print('line={}'.format(line))
-
+for line in sys.stdin.readlines():
+    name=line.strip()
+    number=phonebook.get(name, 'NotInThePhoneBook')
+    if number == 'NotInThePhoneBook':
+        print('Not found')
+    else:
+        print("{}={}".format(name,number))
