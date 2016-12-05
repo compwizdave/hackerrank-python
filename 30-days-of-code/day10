@@ -1,0 +1,24 @@
+#!/bin/python3
+
+import sys
+
+n  = int(input().strip())
+bs = str(bin(n))
+bl = len(bs)
+
+max  = 0
+count= 0
+isa  = False
+
+for p in range(bl):
+    if bs[p] == '1':
+        if isa :
+            count += 1
+        else:
+            isa=True
+            count=1
+    else:
+        isa=False
+    if count > max:
+        max=count
+print(max)
