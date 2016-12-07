@@ -1,0 +1,23 @@
+#!/bin/python3
+
+import sys
+
+arr = []
+for arr_i in range(6):
+   arr_t = [int(arr_temp) for arr_temp in input().strip().split(' ')]
+   arr.append(arr_t)
+
+arrayYSize = len(arr)
+arrayXSize = len(arr[0])
+
+max=None
+for x in range(arrayXSize-2):
+    for y in range(arrayYSize-2):
+        hoursum = arr[y][x] + arr[y][x+1] + arr[y][x+2] + arr[y+1][x+1] + arr[y+2][x] + arr[y+2][x+1] + arr[y+2][x+2]
+        #print(hoursum)
+        #print("{} {} {}".format(arr[y][x] , arr[y][x+1] , arr[y][x+2]))
+        #print("{} {} {}".format(' ', arr[y+1][x+1], ' '))
+        #print("{} {} {}".format(arr[y+2][x] , arr[y+2][x+1] , arr[y+2][x+2]))
+        if max == None or hoursum > max:
+            max = hoursum
+print(max)
