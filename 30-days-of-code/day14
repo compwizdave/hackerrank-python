@@ -1,0 +1,10 @@
+    # Add your code here
+    def computeDifference(self):
+        max = self.__elements[0]
+        min = max
+        for position in range(len(self.__elements)):
+            if self.__elements[position] < min:
+                min = self.__elements[position]
+            if self.__elements[position] > max:
+                max = self.__elements[position]
+        self.maximumDifference=(abs(max-min))
