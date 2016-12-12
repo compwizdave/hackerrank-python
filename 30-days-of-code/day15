@@ -1,0 +1,13 @@
+    def insert(self,head,data): 
+    #Complete this method
+        newNode = Node(data)
+        if head == None :
+            return(newNode)
+        
+        current = head
+        prior = head
+        while current:
+            prior   = current
+            current = current.next
+        prior.next = newNode
+        return(head)
