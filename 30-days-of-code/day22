@@ -1,0 +1,15 @@
+    def getHeight(self,root):
+    #Write your code here
+        def traverse_binary_tree(self,h):
+            if self==None:
+                return h
+                   
+            left = traverse_binary_tree(self.left, h+1)
+            right = traverse_binary_tree(self.right, h+1)
+            if left > right:
+                return left
+            else:
+                return right
+        
+        h=0
+        return(traverse_binary_tree(root,h)-1)
