@@ -1,0 +1,20 @@
+    def levelOrder(self,root):
+        output=[[] for _ in range(10)]
+        deep=-1
+        
+        def levelDeeper(self,root,level):
+            level = level +1
+            if root != None:
+                output[level].append(root.data)
+
+                if root.left != None:
+                    levelDeeper(self,root.left,level)
+                if root.right != None:
+                    levelDeeper(self,root.right,level)
+            return
+        
+        levelDeeper(self,root,deep)
+        
+        for out in output:
+            for n in out:
+                print('{} '.format(n),end='')
