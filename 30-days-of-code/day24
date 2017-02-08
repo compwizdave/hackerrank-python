@@ -1,0 +1,12 @@
+    def removeDuplicates(self,head):
+        values={}
+        p=head;
+        pb=head;
+        while(p != None):
+            if values.setdefault(p.data,False) == True:
+                pb.next=p.next;
+            else:    
+                values[p.data]=True          
+                pb=p
+            p=p.next         
+        return(head)
