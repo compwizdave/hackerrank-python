@@ -1,0 +1,27 @@
+import sys;
+import math;
+
+c=int(input().strip())
+
+for b in range(c):
+    n=int(input().strip())
+    np=True
+    if n == 1:
+        print("Not prime")
+        continue
+        
+    if n == 2:
+        print("Prime")
+        continue     
+        
+    if n % 2 == 0:
+        print("Not prime")
+        continue
+    
+    for d in range(3,int(math.sqrt(n)+1),2):
+        if n % d == 0:
+            print("Not prime")
+            np=False
+            break
+    if np==True:
+        print("Prime")
