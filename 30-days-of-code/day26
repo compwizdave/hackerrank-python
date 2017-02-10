@@ -1,0 +1,13 @@
+arDay,arMonth,arYear=map( int,input().strip().split(' ') )
+exDay,exMonth,exYear=map( int,input().strip().split(' ') )
+
+hackos=0
+
+if arYear > exYear:
+    hackos=10000
+elif arYear == exYear and arMonth > exMonth:
+    hackos=500*(arMonth-exMonth)
+elif arYear == exYear and arMonth == exMonth and arDay > exDay:
+    hackos=15*(arDay-exDay)
+    
+print(hackos)
